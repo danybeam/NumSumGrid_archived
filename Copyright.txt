@@ -1,0 +1,4 @@
+Copyright 2024 Daniel Gerardo Orozco Hernandez
+
+This game was made as an exercise and not with the intention of being sold.
+As owner of the code I do not authorize anyone to copy, modify or distribute it for commercial purposes.
