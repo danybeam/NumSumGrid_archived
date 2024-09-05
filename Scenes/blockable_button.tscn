@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b035cupfyk8gh"]
+
+[ext_resource type="Script" path="res://Scripts/BlockableButtonButton.gd" id="1_nrh6a"]
+
+[node name="BlockableButton" type="Button" groups=["GameButton"]]
+script = ExtResource("1_nrh6a")

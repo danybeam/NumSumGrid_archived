@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqbwyvgbv621k"]
+
+[ext_resource type="Script" path="res://Scripts/life_counter.gd" id="1_txiwr"]
+[ext_resource type="Texture2D" uid="uid://bffdyqfnqogye" path="res://Sprites/hud_heartEmpty.png" id="1_w52e0"]
+[ext_resource type="Texture2D" uid="uid://2uy054fhy6a6" path="res://Sprites/hud_heartFull.png" id="2_5rlky"]
+
+[node name="LifeCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 64.0
+script = ExtResource("1_txiwr")
+
+[node name="HudHeartEmpty1" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 53.0
+offset_bottom = 45.0
+texture = ExtResource("1_w52e0")
+
+[node name="HudHeartEmpty2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_right = 117.0
+offset_bottom = 45.0
+texture = ExtResource("1_w52e0")
+
+[node name="HudHeartEmpty3" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 128.0
+offset_right = 181.0
+offset_bottom = 45.0
+texture = ExtResource("1_w52e0")
+
+[node name="HudHeartFull3" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 128.0
+offset_right = 181.0
+offset_bottom = 45.0
+texture = ExtResource("2_5rlky")
+
+[node name="HudHeartFull2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_right = 117.0
+offset_bottom = 45.0
+texture = ExtResource("2_5rlky")
+
+[node name="HudHeartFull1" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 53.0
+offset_bottom = 45.0
+texture = ExtResource("2_5rlky")

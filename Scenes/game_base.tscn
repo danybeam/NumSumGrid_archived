@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d05e8uejbk7va"]
+
+[ext_resource type="PackedScene" uid="uid://dqbwyvgbv621k" path="res://Scenes/life_counter.tscn" id="1_8n3a1"]
+[ext_resource type="Script" path="res://Scripts/game_base.gd" id="1_xv8w5"]
+[ext_resource type="PackedScene" uid="uid://cwykr6bc82lh4" path="res://Scenes/game_grid.tscn" id="2_cerq2"]
+[ext_resource type="Texture2D" uid="uid://2rjwlwse7731" path="res://Sprites/icon_repeat_dark.png" id="4_b76ws"]
+[ext_resource type="Texture2D" uid="uid://b6eapaa6l7115" path="res://Sprites/icon_repeat_light.png" id="5_jt4sx"]
+
+[node name="GameBase" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xv8w5")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Game Over"
+ok_button_text = "Close"
+dialog_text = "Game over"
+dialog_close_on_escape = false
+
+[node name="LifeCounter" parent="." instance=ExtResource("1_8n3a1")]
+
+[node name="GameGrid" parent="." instance=ExtResource("2_cerq2")]
+layout_mode = 0
+offset_top = 64.0
+offset_bottom = 64.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_right = 238.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_b76ws")
+texture_pressed = ExtResource("5_jt4sx")
+
+[connection signal="canceled" from="AcceptDialog" to="." method="on_game_over_closed"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="on_game_over_closed"]
+[connection signal="game_over" from="LifeCounter" to="." method="on_game_over"]
+[connection signal="item_rect_changed" from="GameGrid" to="." method="on_grid_ready"]
+[connection signal="level_complete" from="GameGrid" to="." method="on_level_complete"]
+[connection signal="pressed" from="TextureButton" to="." method="restart_game"]

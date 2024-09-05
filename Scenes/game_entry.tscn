@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7bo71ffvw2qw"]
+
+[ext_resource type="Script" path="res://Scripts/TutorialScreen.gd" id="1_d265u"]
+
+[node name="ConfirmationDialog" type="ConfirmationDialog"]
+title = ""
+initial_position = 2
+size = Vector2i(896, 384)
+visible = true
+wrap_controls = false
+transient = false
+borderless = true
+mouse_passthrough = true
+keep_title_visible = false
+ok_button_text = "New Game"
+dialog_text = "How to play:
+The numbers in the top row and on the left most column represent the sum for that respective column or row.
+To win this level you need to mark numbers as part of the solution or not part of the solution.
+
+- To mark a number as part of the solution click on it with the left mouse button.
+- To mark a number as NOT part of the solution click on it with the right mouse button.
+
+If you guess correctly the button will become either green or grey depending on whether it is part of the solution.
+If you guess wrong the button wil become red..
+
+Press \"New game\" to start from the start or \"Load game\" to continue where you left off.
+If you feel stuck you can press  the redo button next to the hearts to generate a new puzzle."
+cancel_button_text = "Load Game"
+script = ExtResource("1_d265u")
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]

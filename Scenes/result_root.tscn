@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://fsp82lgnw621"]
+
+[ext_resource type="Script" path="res://Scripts/ResultLabel.gd" id="1_3sjni"]
+
+[node name="resultRoot" type="Panel" groups=["ResultLabels"]]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_3sjni")
